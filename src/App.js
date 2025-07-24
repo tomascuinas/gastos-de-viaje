@@ -224,7 +224,7 @@ function App() {
                     </li>
                   ))}
                 </ul>
-                <div style={{ width: '100%', height: '300px' }}>
+                <div style={{ width: '100%' }}>
                   <Pie data={dataResumenPorPais} />
                 </div>
               </div>
@@ -242,7 +242,7 @@ function App() {
                     </li>
                   ))}
                 </ul>
-                <div style={{ width: '100%', height: '300px' }}>
+                <div style={{ width: '100%' }}>
                   <Bar data={dataResumenPorCategoria} />
                 </div>
               </div>
