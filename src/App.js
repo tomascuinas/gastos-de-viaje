@@ -228,6 +228,7 @@ function App() {
                   <Pie data={dataResumenPorPais} />
                 </div>
               </div>
+              </div>
             </div>
           </div>
           <div className="col-md-6">
@@ -245,6 +246,7 @@ function App() {
                 <div style={{ width: '100%', height: '300px' }}>
                   <Bar data={dataResumenPorCategoria} />
                 </div>
+              </div>
               </div>
             </div>
           </div>
