@@ -179,8 +179,6 @@ function App() {
       <h1 className="text-center mb-4">Registro de Gastos de Viaje</h1>
       <button className="btn btn-success mb-4" onClick={exportarPDF}>Exportar a PDF</button>
 
-      
-
       <div id="contenido-a-exportar">
         <div className="card-body">
           <h2 className="card-title">Agregar Gasto</h2>
@@ -254,12 +252,9 @@ function App() {
         <div className="card mb-4">
           <div className="card-body">
             <h2 className="card-title">Gasto Total del Viaje</h2>
-            <h3 className="text-center">No hay gastos registrados.</h3>
+            <h3 className="text-center">${gastos.reduce((acc, gasto) => acc + gasto.monto, 0).toFixed(2)}</h3>
           </div>
         </div>
-      </div>
-
-      </div>
       </div>
 
       <div className="card">
