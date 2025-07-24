@@ -174,6 +174,7 @@ function App() {
   };
 
   return (
+    <>
     <div className="container mt-5">
       <h1 className="text-center mb-4">Registro de Gastos de Viaje</h1>
       <button className="btn btn-success mb-4" onClick={exportarPDF}>Exportar a PDF</button>
@@ -268,7 +269,7 @@ function App() {
         </div>
       </div>
     </div>
-    </div>
+    </>
   );
 }
 
