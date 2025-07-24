@@ -256,27 +256,26 @@ function App() {
             <h3 className="text-center">${gastos.reduce((acc, gasto) => acc + gasto.monto, 0).toFixed(2)}</h3>
           </div>
         </div>
-      </div>
-
-      <div className="card">
-        <div className="card-body">
-          <h2 className="card-title">Mis Gastos</h2>
-          <ul className="list-group">
-            {gastos.map((gasto) => (
-              <li key={gasto.id} className="list-group-item d-flex justify-content-between align-items-center">
-                <div>
-                  <h5 className="mb-1">{gasto.descripcion}</h5>
-                  <small>{gasto.fecha} - {gasto.pais}</small>
-                  <p className="mb-1 text-muted">{gasto.categoria}</p>
-                </div>
-                <div className="d-flex align-items-center">
-                  <span className="badge bg-primary rounded-pill me-2">${gasto.monto.toFixed(2)}</span>
-                  <button className="btn btn-sm btn-warning me-2" onClick={() => editarGasto(gasto)}>Editar</button>
-                  <button className="btn btn-sm btn-danger" onClick={() => eliminarGasto(gasto.id)}>Eliminar</button>
-                </div>
-              </li>
-            ))}
-          </ul>
+        <div className="card">
+          <div className="card-body">
+            <h2 className="card-title">Mis Gastos</h2>
+            <ul className="list-group">
+              {gastos.map((gasto) => (
+                <li key={gasto.id} className="list-group-item d-flex justify-content-between align-items-center">
+                  <div>
+                    <h5 className="mb-1">{gasto.descripcion}</h5>
+                    <small>{gasto.fecha} - {gasto.pais}</small>
+                    <p className="mb-1 text-muted">{gasto.categoria}</p>
+                  </div>
+                  <div className="d-flex align-items-center">
+                    <span className="badge bg-primary rounded-pill me-2">${gasto.monto.toFixed(2)}</span>
+                    <button className="btn btn-sm btn-warning me-2" onClick={() => editarGasto(gasto)}>Editar</button>
+                    <button className="btn btn-sm btn-danger" onClick={() => eliminarGasto(gasto.id)}>Eliminar</button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
