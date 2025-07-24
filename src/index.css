@@ -1,12 +1,11 @@
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
     'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 0.75rem; /* Further reduce base font size */
+  font-size: 0.7rem; /* Further reduce base font size */
 }
 
 code {
@@ -16,59 +15,59 @@ code {
 
 /* Custom styles for smaller UI */
 .container {
-  max-width: 900px; /* Slightly reduce max-width for a more compact layout */
-  padding-left: 0.5rem; /* Reduce padding */
-  padding-right: 0.5rem; /* Reduce padding */
+  max-width: 768px; /* Significantly reduce max-width for a very compact layout */
+  padding-left: 0.25rem; /* Reduce padding */
+  padding-right: 0.25rem; /* Reduce padding */
 }
 
 h1 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 h2 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .form-label {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   margin-bottom: 0.1rem; /* Reduce margin */
 }
 
 .form-control {
-  font-size: 0.75rem;
-  padding: 0.25rem 0.4rem; /* Reduce padding */
+  font-size: 0.7rem;
+  padding: 0.2rem 0.3rem; /* Reduce padding */
 }
 
 .btn {
-  font-size: 0.75rem;
-  padding: 0.25rem 0.6rem; /* Reduce padding */
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem; /* Reduce padding */
 }
 
 .card {
-  margin-bottom: 0.5rem; /* Reduce margin */
+  margin-bottom: 0.4rem; /* Reduce margin */
 }
 
 .card-body {
-  padding: 0.6rem; /* Reduce padding */
+  padding: 0.5rem; /* Reduce padding */
 }
 
 .list-group-item {
-  font-size: 0.75rem;
-  padding: 0.4rem 0.6rem; /* Reduce padding */
+  font-size: 0.7rem;
+  padding: 0.3rem 0.5rem; /* Reduce padding */
 }
 
 .badge {
-  font-size: 0.6rem;
-  padding: 0.2em 0.4em;
+  font-size: 0.55rem;
+  padding: 0.15em 0.3em;
 }
 
 /* Adjust chart container height */
 .card-body > div[style*="height: 300px"] {
-  height: 180px !important; /* Make charts even smaller */
+  height: 150px !important; /* Make charts even smaller */
 }
 
 /* Ensure charts are responsive within their containers */
@@ -79,15 +78,15 @@ canvas {
 
 /* Reduce margin for mb-4 classes */
 .mb-4 {
-  margin-bottom: 0.5rem !important; /* Further reduce margin */
+  margin-bottom: 0.4rem !important; /* Further reduce margin */
 }
 
 /* Reduce margin for mb-3 classes */
 .mb-3 {
-  margin-bottom: 0.3rem !important; /* Further reduce margin */
+  margin-bottom: 0.2rem !important; /* Further reduce margin */
 }
 
 /* Adjust padding for mt-5 */
 .mt-5 {
-  margin-top: 1rem !important; /* Reduce margin */
+  margin-top: 0.8rem !important; /* Reduce margin */
 }
