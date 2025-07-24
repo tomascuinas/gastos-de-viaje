@@ -148,7 +148,7 @@ function App() {
   };
 
   const exportarPDF = () => {
-    const input = document.getElementById('resumenes-a-exportar');
+    const input = document.getElementById('pdf-content');
     html2canvas(input)
       .then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
@@ -210,7 +210,8 @@ function App() {
         </div>
       </div>
 
-      <div id="resumenes-a-exportar">
+      <div id="pdf-content">
+        <div id="resumenes-a-exportar">
         <h2 className="text-center mb-4">Resumen de Gastos de Viaje</h2>
         <div className="row">
           <div className="col-md-6">
@@ -258,8 +259,7 @@ function App() {
         </div>
       </div>
 
-      
-    <div className="card">
+      <div className="card">
         <div className="card-body">
           <h2 className="card-title">Mis Gastos</h2>
           <ul className="list-group">
