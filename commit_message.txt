@@ -1,1 +1,1 @@
-Fix: Remove duplicate declaration of gastoEditando.
+Fix: Terminate JSX content in App.js (correctly).
