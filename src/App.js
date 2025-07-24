@@ -148,7 +148,7 @@ function App() {
   };
 
   const exportarPDF = () => {
-    const input = document.getElementById('contenido-a-exportar');
+    const input = document.getElementById('resumenes-a-exportar');
     html2canvas(input)
       .then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
@@ -179,70 +179,52 @@ function App() {
       <h1 className="text-center mb-4">Registro de Gastos de Viaje</h1>
       <button className="btn btn-success mb-4" onClick={exportarPDF}>Exportar a PDF</button>
 
-      <div id="contenido-a-exportar">
-        <div className="card-body">
-          <h2 className="card-title">Agregar Gasto</h2>
-          <form onSubmit={agregarGasto}>
-            <div className="mb-3">
-              <label htmlFor="fecha" className="form-label">Fecha</label>
-              <input type="date" className="form-control" id="fecha" value={fecha} onChange={(e) => setFecha(e.target.value)} />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="monto" className="form-label">Monto</label>
-              <input type="number" className="form-control" id="monto" value={monto} onChange={(e) => setMonto(e.target.value)} placeholder="Ej: 50.00" required />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="categoria" className="form-label">Categoría</label>
-              <input type="text" className="form-control" id="categoria" value={categoria} onChange={(e) => setCategoria(capitalizar(e.target.value))} placeholder="Ej: Comida, Transporte" />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="descripcion" className="form-label">Descripción</label>
-              <textarea className="form-control" id="descripcion" value={descripcion} onChange={(e) => setDescripcion(capitalizar(e.target.value))} rows="2" placeholder="Ej: Cena en restaurante"></textarea>
-            </div>
-            <div className="mb-3">
-              <label htmlFor="pais" className="form-label">País</label>
-              <input type="text" className="form-control" id="pais" value={pais} onChange={(e) => setPais(capitalizar(e.target.value))} placeholder="Ej: Argentina" />
-            </div>
-            <button type="submit" className="btn btn-primary">{gastoEditando ? 'Actualizar' : 'Agregar'}</button>
-          </form>
-        </div>
-      </div>
+      
 
-      <div className="row">
-        <div className="col-md-6">
-          <div className="card mb-4">
-            <div className="card-body">
-              <h2 className="card-title">Resumen por País</h2>
-              <ul className="list-group">
-                {Object.entries(resumenPorPais).map(([pais, total]) => (
-                  <li key={pais} className="list-group-item d-flex justify-content-between align-items-center">
-                    {pais}
-                    <span className="badge bg-success rounded-pill">${total.toFixed(2)}</span>
-                  </li>
-                ))}
-              </ul>
-              <div style={{ width: '100%', height: '300px' }}>
-                <Pie data={dataResumenPorPais} />
+      <div id="resumenes-a-exportar">
+        <h2 className="text-center mb-4">Resumen de Gastos de Viaje</h2>
+        <div className="row">
+          <div className="col-md-6">
+            <div className="card mb-4">
+              <div className="card-body">
+                <h2 className="card-title">Resumen por País</h2>
+                <ul className="list-group">
+                  {Object.entries(resumenPorPais).map(([pais, total]) => (
+                    <li key={pais} className="list-group-item d-flex justify-content-between align-items-center">
+                      {pais}
+                      <span className="badge bg-success rounded-pill">${total.toFixed(2)}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div style={{ width: '100%', height: '300px' }}>
+                  <Pie data={dataResumenPorPais} />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="card mb-4">
+              <div className="card-body">
+                <h2 className="card-title">Resumen por Categoría</h2>
+                <ul className="list-group">
+                  {Object.entries(resumenPorCategoria).map(([categoria, total]) => (
+                    <li key={categoria} className="list-group-item d-flex justify-content-between align-items-center">
+                      {categoria}
+                      <span className="badge bg-info rounded-pill">${total.toFixed(2)}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div style={{ width: '100%', height: '300px' }}>
+                  <Bar data={dataResumenPorCategoria} />
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="col-md-6">
-          <div className="card mb-4">
-            <div className="card-body">
-              <h2 className="card-title">Resumen por Categoría</h2>
-              <ul className="list-group">
-                {Object.entries(resumenPorCategoria).map(([categoria, total]) => (
-                  <li key={categoria} className="list-group-item d-flex justify-content-between align-items-center">
-                    {categoria}
-                    <span className="badge bg-info rounded-pill">${total.toFixed(2)}</span>
-                  </li>
-                ))}
-              </ul>
-              <div style={{ width: '100%', height: '300px' }}>
-                <Bar data={dataResumenPorCategoria} />
-              </div>
-            </div>
+        <div className="card mb-4">
+          <div className="card-body">
+            <h2 className="card-title">Gasto Total del Viaje</h2>
+            <h3 className="text-center">${gastos.reduce((acc, gasto) => acc + gasto.monto, 0).toFixed(2)}</h3>
           </div>
         </div>
       </div>
