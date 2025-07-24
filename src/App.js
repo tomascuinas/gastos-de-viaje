@@ -208,55 +208,7 @@ function App() {
         </div>
       </div>
 
-      <div id="pdf-content">
-        <div id="resumenes-a-exportar">
-        <h2 className="text-center mb-4">Resumen de Gastos de Viaje</h2>
-        <div className="row">
-          <div className="col-6">
-            <div className="card mb-4">
-              <div className="card-body">
-                <h2 className="card-title">Resumen por País</h2>
-                <ul className="list-group">
-                  {Object.entries(resumenPorPais).map(([pais, total]) => (
-                    <li key={pais} className="list-group-item d-flex justify-content-between align-items-center">
-                      {pais}
-                      <span className="badge bg-success rounded-pill">${total.toFixed(2)}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div style={{ width: '100%' }}>
-                  <Pie data={dataResumenPorPais} />
-                </div>
-              </div>
-              </div>
-            </div>
-          <div className="col-6">
-            <div className="card mb-4">
-              <div className="card-body">
-                <h2 className="card-title">Resumen por Categoría</h2>
-                <ul className="list-group">
-                  {Object.entries(resumenPorCategoria).map(([categoria, total]) => (
-                    <li key={categoria} className="list-group-item d-flex justify-content-between align-items-center">
-                      {categoria}
-                      <span className="badge bg-info rounded-pill">${total.toFixed(2)}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div style={{ width: '100%' }}>
-                  <Bar data={dataResumenPorCategoria} />
-                </div>
-              </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="card mb-4">
-          <div className="card-body">
-            <h2 className="card-title">Gasto Total del Viaje</h2>
-            <h3 className="text-center">${gastos.reduce((acc, gasto) => acc + gasto.monto, 0).toFixed(2)}</h3>
-          </div>
-        </div>
-      </div>
+      
 
       <div className="card">
         <div className="card-body">
