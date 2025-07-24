@@ -16,8 +16,6 @@ function App() {
   const [fecha, setFecha] = useState(new Date().toISOString().slice(0, 10));
   const [gastoEditando, setGastoEditando] = useState(null);
 
-  const [gastoEditando, setGastoEditando] = useState(null);
-
   useEffect(() => {
     const gastosGuardados = JSON.parse(localStorage.getItem('gastos'));
     if (gastosGuardados) {
