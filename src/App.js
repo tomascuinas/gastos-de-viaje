@@ -230,7 +230,6 @@ function App() {
               </div>
               </div>
             </div>
-          </div>
           <div className="col-6">
             <div className="card mb-4">
               <div className="card-body">
