@@ -175,62 +175,7 @@ function App() {
 
   return (
     <>
-    <div className="container mt-5">
-      <h1 className="text-center mb-4">Registro de Gastos de Viaje</h1>
-      <button className="btn btn-success mb-4" onClick={exportarPDF}>Exportar a PDF</button>
-
-      <div id="contenido-a-exportar">
-        <div className="card-body">
-          <h2 className="card-title">Agregar Gasto</h2>
-          <form onSubmit={agregarGasto}>
-            <div className="mb-3">
-              <label htmlFor="fecha" className="form-label">Fecha</label>
-              <input type="date" className="form-control" id="fecha" value={fecha} onChange={(e) => setFecha(e.target.value)} />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="monto" className="form-label">Monto</label>
-              <input type="number" className="form-control" id="monto" value={monto} onChange={(e) => setMonto(e.target.value)} placeholder="Ej: 50.00" required />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="categoria" className="form-label">Categoría</label>
-              <input type="text" className="form-control" id="categoria" value={categoria} onChange={(e) => setCategoria(capitalizar(e.target.value))} placeholder="Ej: Comida, Transporte" />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="descripcion" className="form-label">Descripción</label>
-              <textarea className="form-control" id="descripcion" value={descripcion} onChange={(e) => setDescripcion(capitalizar(e.target.value))} rows="2" placeholder="Ej: Cena en restaurante"></textarea>
-            </div>
-            <div className="mb-3">
-              <label htmlFor="pais" className="form-label">País</label>
-              <input type="text" className="form-control" id="pais" value={pais} onChange={(e) => setPais(capitalizar(e.target.value))} placeholder="Ej: Argentina" />
-            </div>
-            <button type="submit" className="btn btn-primary">{gastoEditando ? 'Actualizar' : 'Agregar'}</button>
-          </form>
-        </div>
-      </div>
-
-      
-
-      <div className="card">
-        <div className="card-body">
-          <h2 className="card-title">Mis Gastos</h2>
-          <ul className="list-group">
-            {gastos.map((gasto) => (
-              <li key={gasto.id} className="list-group-item d-flex justify-content-between align-items-center">
-                <div>
-                  <h5 className="mb-1">{gasto.descripcion}</h5>
-                  <small>{gasto.fecha} - {gasto.pais}</small>
-                  <p className="mb-1 text-muted">{gasto.categoria}</p>
-                </div>
-                <div className="d-flex align-items-center">
-                  <span className="badge bg-primary rounded-pill me-2">${gasto.monto.toFixed(2)}</span>
-                  <button className="btn btn-sm btn-warning me-2" onClick={() => editarGasto(gasto)}>Editar</button>
-                  <button className="btn btn-sm btn-danger" onClick={() => eliminarGasto(gasto.id)}>Eliminar</button>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      <div>Hello World</div>
     </>
   );
 }
