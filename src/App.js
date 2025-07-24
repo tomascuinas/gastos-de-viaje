@@ -212,7 +212,7 @@ function App() {
         <div id="resumenes-a-exportar">
         <h2 className="text-center mb-4">Resumen de Gastos de Viaje</h2>
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-6">
             <div className="card mb-4">
               <div className="card-body">
                 <h2 className="card-title">Resumen por País</h2>
@@ -231,7 +231,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-6">
             <div className="card mb-4">
               <div className="card-body">
                 <h2 className="card-title">Resumen por Categoría</h2>
