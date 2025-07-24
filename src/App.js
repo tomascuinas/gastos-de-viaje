@@ -259,6 +259,9 @@ function App() {
         </div>
       </div>
 
+      </div>
+      </div>
+
       <div className="card">
         <div className="card-body">
           <h2 className="card-title">Mis Gastos</h2>
